@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #f5f3f8;
+
+    color: #24202d;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+/* HEADER */
+
+.header {
+
+    background: #ffffff;
+
+    border-bottom:
+        1px solid #e5e0eb;
+
+}
+
+
+.header-container {
+
+    width: 90%;
+
+    max-width: 1200px;
+
+    height: 70px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+}
+
+
+.logo {
+
+    text-decoration: none;
+
+    font-size: 24px;
+
+    font-weight: 900;
+
+    color: #5b21b6;
+
+}
+
+
+.logo span {
+
+    color: #21182d;
+
+}
+
+
+.menu {
+
+    display: flex;
+
+    gap: 25px;
+
+}
+
+
+.menu a {
+
+    text-decoration: none;
+
+    color: #66606f;
+
+    font-weight: bold;
+
+}
+
+
+.menu a:hover,
+.menu a.active {
+
+    color: #5b21b6;
+
+}
+
+
+/* MAIN */
+
+.main {
+
+    flex: 1;
+
+    width: 90%;
+
+    max-width: 500px;
+
+    margin: 80px auto;
+
+}
+
+
+/* CARD */
+
+.login-card {
+
+    background: #ffffff;
+
+    padding: 35px;
+
+    border-radius: 16px;
+
+    border:
+        1px solid #e5e0eb;
+
+    box-shadow:
+        0 8px 25px
+        rgba(50, 30, 80, 0.08);
+
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+
+.cabecalho h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.cabecalho p {
+
+    color: #77717f;
+
+}
+
+
+/* CAMPOS */
+
+.campo {
+
+    margin-bottom: 20px;
+
+}
+
+
+.campo label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.campo input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding: 0 13px;
+
+    border:
+        1px solid #d8d1df;
+
+    border-radius: 9px;
+
+    font-size: 15px;
+
+    outline: none;
+
+}
+
+
+.campo input:focus {
+
+    border-color: #5b21b6;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(91, 33, 182, 0.08);
+
+}
+
+
+/* MENSAGEM */
+
+.mensagem {
+
+    display: none;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+    margin-bottom: 15px;
+
+    font-size: 14px;
+
+    line-height: 1.4;
+
+}
+
+
+.mensagem.erro {
+
+    display: block;
+
+    background: #fef2f2;
+
+    color: #991b1b;
+
+    border:
+        1px solid #fecaca;
+
+}
+
+
+.mensagem.sucesso {
+
+    display: block;
+
+    background: #f0fdf4;
+
+    color: #166534;
+
+    border:
+        1px solid #bbf7d0;
+
+}
+
+
+/* BOTÃO */
+
+.btn-login {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #5b21b6;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.btn-login:hover {
+
+    background: #4c1d95;
+
+}
+
+
+/* CADASTRO */
+
+.cadastro-link {
+
+    text-align: center;
+
+    margin-top: 22px;
+
+    color: #77717f;
+
+    font-size: 14px;
+
+}
+
+
+.cadastro-link a {
+
+    color: #5b21b6;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+/* FOOTER */
+
+.footer {
+
+    background: #21182d;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 25px;
+
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 600px) {
+
+    .header-container {
+
+        height: auto;
+
+        padding: 20px;
+
+        flex-direction: column;
+
+    }
+
+
+    .menu {
+
+        margin-top: 15px;
+
+    }
+
+
+    .login-card {
+
+        padding: 25px 20px;
+
+    }
+
+}
