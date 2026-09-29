@@ -1,441 +1,160 @@
-const form =
-    document.getElementById("cadastroForm");
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-const mensagem =
-    document.getElementById("mensagem");
+<head>
 
-const jornalista =
-    document.getElementById("jornalista");
+    <meta charset="UTF-8">
 
-const conviteContainer =
-    document.getElementById("conviteContainer");
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-const codigoConvite =
-    document.getElementById("codigoConvite");
+    <title>InfoPortal • Login</title>
 
+    <link
+        rel="stylesheet"
+        href="../css/login.css"
+    >
 
-// ==========================================
-// USUÁRIOS
-// ==========================================
+</head>
 
-function obterUsuarios() {
 
-    const dados =
-        localStorage.getItem(
-            "usuariosInfoPortal"
-        );
+<body>
 
-    if (!dados) {
+    <header class="header">
 
-        return [];
+        <div class="header-container">
 
-    }
+            <a
+                href="index.html"
+                class="logo"
+            >
+                INFO<span>PORTAL</span>
+            </a>
 
-    try {
 
-        return JSON.parse(dados);
+            <nav class="menu">
 
-    } catch {
+                <a href="index.html">
+                    Início
+                </a>
 
-        return [];
+                <a href="busca.html">
+                    Buscar
+                </a>
 
-    }
+                <a
+                    href="login.html"
+                    class="active"
+                >
+                    Entrar
+                </a>
 
-}
+            </nav>
 
+        </div>
 
-function salvarUsuarios(usuarios) {
+    </header>
 
-    localStorage.setItem(
-        "usuariosInfoPortal",
-        JSON.stringify(usuarios)
-    );
 
-}
+    <main class="main">
 
+        <section class="login-card">
 
-// ==========================================
-// MENSAGEM
-// ==========================================
+            <div class="cabecalho">
 
-function mostrarMensagem(
-    texto,
-    tipo
-) {
+                <h1>
+                    Entrar
+                </h1>
 
-    mensagem.textContent = texto;
+                <p>
+                    Acesse sua conta do InfoPortal.
+                </p>
 
-    mensagem.className =
-        `mensagem ${tipo}`;
+            </div>
 
-}
 
+            <form id="loginForm">
 
-// ==========================================
-// JORNALISTA
-// ==========================================
 
-jornalista.addEventListener(
-    "change",
-    function() {
+                <div class="campo">
 
-        if (jornalista.checked) {
+                    <label for="email">
+                        E-mail
+                    </label>
 
-            conviteContainer.classList.add(
-                "visivel"
-            );
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="email"
+                        required
+                    >
 
-        } else {
+                </div>
 
-            conviteContainer.classList.remove(
-                "visivel"
-            );
 
-            codigoConvite.value = "";
+                <div class="campo">
 
-        }
+                    <label for="senha">
+                        Senha
+                    </label>
 
-    }
-);
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
 
+                </div>
 
-// ==========================================
-// CADASTRO
-// ==========================================
 
-form.addEventListener(
-    "submit",
-    function(event) {
+                <div
+                    id="mensagem"
+                    class="mensagem"
+                ></div>
 
-        event.preventDefault();
 
+                <button
+                    type="submit"
+                    class="btn-login"
+                >
+                    Entrar
+                </button>
 
-        const nome =
-            document
-                .getElementById("nome")
-                .value
-                .trim();
 
+            </form>
 
-        const email =
-            document
-                .getElementById("email")
-                .value
-                .trim()
-                .toLowerCase();
 
+            <div class="cadastro-link">
 
-        const dataNascimento =
-            document
-                .getElementById("dataNascimento")
-                .value;
+                Ainda não possui uma conta?
 
+                <a href="cadastro.html">
+                    Criar conta
+                </a>
 
-        const senha =
-            document
-                .getElementById("senha")
-                .value;
+            </div>
 
+        </section>
 
-        const confirmarSenha =
-            document
-                .getElementById("confirmarSenha")
-                .value;
+    </main>
 
 
-        // ==================================
-        // VALIDAÇÕES
-        // ==================================
+    <footer class="footer">
 
-        if (nome.length < 3) {
+        <p>
+            InfoPortal © 2026
+        </p>
 
-            mostrarMensagem(
-                "Informe seu nome completo.",
-                "erro"
-            );
+    </footer>
 
-            return;
 
-        }
+    <script src="../js/login.js"></script>
 
+</body>
 
-        if (!email.includes("@")) {
-
-            mostrarMensagem(
-                "Informe um e-mail válido.",
-                "erro"
-            );
-
-            return;
-
-        }
-
-
-        if (!dataNascimento) {
-
-            mostrarMensagem(
-                "Informe sua data de nascimento.",
-                "erro"
-            );
-
-            return;
-
-        }
-
-
-        if (senha.length < 6) {
-
-            mostrarMensagem(
-                "A senha deve possuir pelo menos 6 caracteres.",
-                "erro"
-            );
-
-            return;
-
-        }
-
-
-        if (senha !== confirmarSenha) {
-
-            mostrarMensagem(
-                "As senhas não coincidem.",
-                "erro"
-            );
-
-            return;
-
-        }
-
-
-        // ==================================
-        // VERIFICAR IDADE
-        // ==================================
-
-        const nascimento =
-            new Date(dataNascimento);
-
-        const hoje =
-            new Date();
-
-        let idade =
-            hoje.getFullYear() -
-            nascimento.getFullYear();
-
-        const mes =
-            hoje.getMonth() -
-            nascimento.getMonth();
-
-        if (
-            mes < 0 ||
-            (
-                mes === 0 &&
-                hoje.getDate() <
-                nascimento.getDate()
-            )
-        ) {
-
-            idade--;
-
-        }
-
-
-        // ==================================
-        // JORNALISTA
-        // ==================================
-
-        let perfil =
-            "LEITOR";
-
-
-        if (jornalista.checked) {
-
-            if (idade < 16) {
-
-                mostrarMensagem(
-                    "O cadastro de jornalista exige idade mínima de 16 anos.",
-                    "erro"
-                );
-
-                return;
-
-            }
-
-
-            if (
-                codigoConvite.value
-                    .trim()
-                    .length === 0
-            ) {
-
-                mostrarMensagem(
-                    "Informe o código do convite corporativo.",
-                    "erro"
-                );
-
-                return;
-
-            }
-
-
-            /*
-             * Código de convite de teste.
-             *
-             * No backend real, o convite deverá
-             * ser validado no servidor.
-             */
-
-            if (
-                codigoConvite.value
-                    .trim()
-                    .toUpperCase()
-                !==
-                "INFO2026"
-            ) {
-
-                mostrarMensagem(
-                    "Código de convite inválido.",
-                    "erro"
-                );
-
-                return;
-
-            }
-
-
-            perfil =
-                "JORNALISTA";
-
-        }
-
-
-        // ==================================
-        // BUSCAR USUÁRIOS
-        // ==================================
-
-        const usuarios =
-            obterUsuarios();
-
-
-        // ==================================
-        // E-MAIL ÚNICO
-        // ==================================
-
-        const emailExiste =
-            usuarios.some(
-                usuario =>
-                    usuario.email === email
-            );
-
-
-        if (emailExiste) {
-
-            mostrarMensagem(
-                "Este e-mail já está cadastrado.",
-                "erro"
-            );
-
-            return;
-
-        }
-
-
-        // ==================================
-        // CRIAR USUÁRIO
-        // ==================================
-
-        const novoUsuario = {
-
-            id:
-                Date.now(),
-
-            nome:
-                nome,
-
-            email:
-                email,
-
-            dataNascimento:
-                dataNascimento,
-
-            senha:
-                senha,
-
-            perfil:
-                perfil
-
-        };
-
-
-        usuarios.push(
-            novoUsuario
-        );
-
-
-        salvarUsuarios(
-            usuarios
-        );
-
-
-        // ==================================
-        // LOGIN AUTOMÁTICO
-        // ==================================
-
-        localStorage.setItem(
-
-            "usuarioLogado",
-
-            JSON.stringify({
-
-                id:
-                    novoUsuario.id,
-
-                nome:
-                    novoUsuario.nome,
-
-                email:
-                    novoUsuario.email,
-
-                perfil:
-                    novoUsuario.perfil
-
-            })
-
-        );
-
-
-        mostrarMensagem(
-
-            "Cadastro realizado com sucesso! Entrando...",
-
-            "sucesso"
-
-        );
-
-
-        form.reset();
-
-
-        conviteContainer.classList.remove(
-            "visivel"
-        );
-
-
-        // ==================================
-        // REDIRECIONAR
-        // ==================================
-
-        setTimeout(
-
-            function() {
-
-                window.location.href =
-                    "login.html";
-
-            },
-
-            1200
-
-        );
-
-    }
-);
+</html>

@@ -2,23 +2,12 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal - Cadastro</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>InfoPortal • Cadastro</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/cadastro.css"
-    >
-
+    <link rel="stylesheet" href="../css/cadastro.css">
 </head>
-
 
 <body>
 
@@ -26,22 +15,14 @@
 
         <div class="header-container">
 
-            <a
-                href="index.html"
-                class="logo"
-            >
+            <a href="index.html" class="logo">
                 INFO<span>PORTAL</span>
             </a>
-
 
             <nav class="menu">
 
                 <a href="index.html">
                     Início
-                </a>
-
-                <a href="busca.html">
-                    Buscar
                 </a>
 
                 <a href="login.html">
@@ -66,16 +47,13 @@
                 </h1>
 
                 <p>
-                    Faça seu cadastro para participar do InfoPortal.
+                    Preencha os dados para realizar seu cadastro.
                 </p>
 
             </div>
 
 
             <form id="cadastroForm">
-
-
-                <!-- NOME -->
 
                 <div class="campo">
 
@@ -88,14 +66,11 @@
                         id="nome"
                         name="nome"
                         placeholder="Digite seu nome completo"
-                        autocomplete="name"
                         required
                     >
 
                 </div>
 
-
-                <!-- E-MAIL -->
 
                 <div class="campo">
 
@@ -108,14 +83,11 @@
                         id="email"
                         name="email"
                         placeholder="Digite seu e-mail"
-                        autocomplete="email"
                         required
                     >
 
                 </div>
 
-
-                <!-- DATA DE NASCIMENTO -->
 
                 <div class="campo">
 
@@ -130,14 +102,8 @@
                         required
                     >
 
-                    <small>
-                        Necessária para validação das regras de idade.
-                    </small>
-
                 </div>
 
-
-                <!-- SENHA -->
 
                 <div class="campo">
 
@@ -149,15 +115,12 @@
                         type="password"
                         id="senha"
                         name="senha"
-                        placeholder="Mínimo de 6 caracteres"
-                        autocomplete="new-password"
+                        placeholder="Digite sua senha"
                         required
                     >
 
                 </div>
 
-
-                <!-- CONFIRMAR SENHA -->
 
                 <div class="campo">
 
@@ -170,64 +133,10 @@
                         id="confirmarSenha"
                         name="confirmarSenha"
                         placeholder="Digite a senha novamente"
-                        autocomplete="new-password"
                         required
                     >
 
                 </div>
-
-
-                <!-- CONVITE JORNALISTA -->
-
-                <div class="jornalista-box">
-
-                    <div class="jornalista-titulo">
-
-                        <input
-                            type="checkbox"
-                            id="jornalista"
-                        >
-
-                        <label for="jornalista">
-                            Sou jornalista
-                        </label>
-
-                    </div>
-
-
-                    <p>
-                        Possui um convite corporativo?
-                        Informe o código para solicitar
-                        o perfil de jornalista.
-                    </p>
-
-
-                    <div
-                        id="conviteContainer"
-                        class="convite-container"
-                    >
-
-                        <label for="codigoConvite">
-                            Código do convite
-                        </label>
-
-                        <input
-                            type="text"
-                            id="codigoConvite"
-                            placeholder="Digite o código"
-                        >
-
-                    </div>
-
-                </div>
-
-
-                <!-- MENSAGEM -->
-
-                <div
-                    id="mensagem"
-                    class="mensagem"
-                ></div>
 
 
                 <button
@@ -237,8 +146,10 @@
                     Criar conta
                 </button>
 
-
             </form>
+
+
+            <div id="resultado"></div>
 
 
             <div class="login-link">
