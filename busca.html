@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal • Buscar</title>
+    <link rel="stylesheet" href="/css/busca.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                INFO<span>PORTAL</span>
+            </a>
+
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="busca.html" class="active">Buscar</a>
+            <a href="cadastro.html">Cadastro</a>
+            <a href="login.html">Entrar</a>
+        </nav>
+    </div>
+</header>
+
+<main class="main">
+    <section class="busca-section">
+        <div class="cabecalho">
+            <span class="section-tag">INFOPORTAL</span>
+            <h1>Buscar notícias</h1>
+            <p>
+                Encontre notícias por palavra-chave, categoria,
+                autor ou período.
+            </p>
+        </div>
+
+        <form id="buscaForm" class="busca-form">
+            <div class="campo campo-busca">
+                <label for="termo">Pesquisar</label>
+                <input
+                    type="text"
+                    id="termo"
+                    name="termo"
+                    placeholder="Digite uma palavra-chave"
+                >
+            </div>
+
+            <div class="filtros">
+                <div class="campo">
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria" name="categoria">
+                        <option value="">Todas</option>
+                        <option value="politica">Política</option>
+                        <option value="economia">Economia</option>
+                        <option value="tecnologia">Tecnologia</option>
+                        <option value="esportes">Esportes</option>
+                        <option value="cultura">Cultura</option>
+                        <option value="saude">Saúde</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="autor">Autor</label>
+                    <input
+                        type="text"
+                        id="autor"
+                        name="autor"
+                        placeholder="Nome do autor"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="data">Data</label>
+                    <input
+                        type="date"
+                        id="data"
+                        name="data"
+                    >
+                </div>
+            </div>
+
+            <button type="submit" class="btn-buscar">
+                Buscar notícias
+            </button>
+        </form>
+    </section>
+
+    <section class="resultados-section">
+        <div class="resultados-header">
+            <div>
+                <span class="section-tag">RESULTADOS</span>
+                <h2>Notícias encontradas</h2>
+            </div>
+
+            <span id="contadorResultados">
+                0 resultados
+            </span>
+        </div>
+
+        <div id="resultados" class="resultados">
+        </div>
+
+        <div id="mensagem" class="mensagem">
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <p>InfoPortal © 2026</p>
+</footer>
+
+<script src="/js/busca.js"></script>
+
+
+</body>
+</html>
