@@ -1,160 +1,70 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-
+<html lang="en">
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>InfoPortal • Login</title>
-
-    <link
-        rel="stylesheet"
-        href="../css/login.css"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal</title>
+    <link rel="stylesheet" href="css/login.css">
 </head>
-
-
 <body>
-
-    <header class="header">
-
-        <div class="header-container">
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-                INFO<span>PORTAL</span>
-            </a>
-
-
             <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Buscar</a>
+            <a href="login.html" class="active">Entrar</a>
+        </nav>
+    </div>
+</header>
 
-                <a href="index.html">
-                    Início
-                </a>
-
-                <a href="busca.html">
-                    Buscar
-                </a>
-
-                <a
-                    href="login.html"
-                    class="active"
-                >
-                    Entrar
-                </a>
-
-            </nav>
-
+<main class="main">
+    <section class="login-card">
+        <div class="cabecalho">
+            <h1>Entrar</h1>
+            <p>Acesse sua conta do InfoPortal.</p>
         </div>
 
-    </header>
+        <form id="loginForm">
+            <div class="campo">
+                <label for="email">E-mail</label>
 
-
-    <main class="main">
-
-        <section class="login-card">
-
-            <div class="cabecalho">
-
-                <h1>
-                    Entrar
-                </h1>
-
-                <p>
-                    Acesse sua conta do InfoPortal.
-                </p>
-
-            </div>
-
-
-            <form id="loginForm">
-
-
-                <div class="campo">
-
-                    <label for="email">
-                        E-mail
-                    </label>
-
-                    <input
-                        type="email"
-                        id="email"
-                        placeholder="Digite seu e-mail"
-                        autocomplete="email"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="campo">
-
-                    <label for="senha">
-                        Senha
-                    </label>
-
-                    <input
-                        type="password"
-                        id="senha"
-                        placeholder="Digite sua senha"
-                        autocomplete="current-password"
-                        required
-                    >
-
-                </div>
-
-
-                <div
-                    id="mensagem"
-                    class="mensagem"
-                ></div>
-
-
-                <button
-                    type="submit"
-                    class="btn-login"
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    autocomplete="email"
+                    required
                 >
-                    Entrar
-                </button>
-
-
-            </form>
-
-
-            <div class="cadastro-link">
-
-                Ainda não possui uma conta?
-
-                <a href="cadastro.html">
-                    Criar conta
-                </a>
-
             </div>
 
-        </section>
+            <div class="campo">
+                <label for="senha">Senha</label>
 
-    </main>
+                <input
+                    type="password"
+                    id="senha"
+                    placeholder="Digite sua senha"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
 
+            <div id="mensagem" class="mensagem"></div>
 
-    <footer class="footer">
+            <button type="submit" class="btn-login">
+                Entrar
+            </button>
+        </form>
 
-        <p>
-            InfoPortal © 2026
-        </p>
+        <div class="cadastro-link">
+            Ainda não possui uma conta?
+            <a href="cadastro.html">Criar conta</a>
+        </div>
+    </section>
+</main>
 
-    </footer>
+<footer class="footer">
+    <p>InfoPortal © 2026</p>
+</footer>
 
-
-    <script src="../js/login.js"></script>
-
+<script src="../js/login.js"></script>
 </body>
-
 </html>
