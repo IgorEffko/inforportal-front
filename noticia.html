@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal • Notícia</title>
+    <link rel="stylesheet" href="/css/noticia.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                INFO<span>PORTAL</span>
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="busca.html">Buscar</a>
+                <a href="cadastro.html">Cadastro</a>
+                <a href="login.html">Entrar</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <article class="noticia">
+            <div class="noticia-cabecalho">
+                <span id="categoria" class="categoria">
+                    Tecnologia
+                </span>
+
+                <h1 id="titulo">
+                    Nova tecnologia transforma o jornalismo
+                </h1>
+
+                <div class="noticia-info">
+                    <span id="autor">
+                        Por Equipe InfoPortal
+                    </span>
+
+                    <span id="data">
+                        01/10/2026
+                    </span>
+                </div>
+            </div>
+
+            <div class="noticia-imagem">
+                <img
+                    id="imagem"
+                    src="https://via.placeholder.com/1000x450"
+                    alt="Imagem da notícia"
+                >
+            </div>
+
+            <div class="noticia-conteudo">
+                <p id="resumo">
+                    Novas ferramentas digitais estão mudando a forma
+                    como as notícias são produzidas e consumidas.
+                </p>
+
+                <p id="conteudo">
+                    A evolução das tecnologias digitais vem
+                    transformando o jornalismo e criando novas
+                    possibilidades para produção, distribuição
+                    e acesso à informação.
+                </p>
+
+                <p>
+                    O uso de novas ferramentas permite que jornalistas
+                    produzam conteúdos de diferentes formatos e alcancem
+                    públicos cada vez maiores.
+                </p>
+            </div>
+
+            <div class="acoes">
+                <button id="btnCurtir" class="btn-curtir" type="button">
+                    ♡ Curtir
+                </button>
+
+                <span id="contadorCurtidas">
+                    0 curtidas
+                </span>
+            </div>
+        </article>
+
+        <section class="comentarios-section">
+            <div class="section-header">
+                <span class="section-tag">PARTICIPAÇÃO</span>
+                <h2>Comentários</h2>
+            </div>
+
+            <form id="comentarioForm" class="comentario-form">
+                <label for="comentario">
+                    Deixe seu comentário
+                </label>
+
+                <textarea
+                    id="comentario"
+                    name="comentario"
+                    placeholder="Escreva seu comentário..."
+                    rows="5"
+                    required
+                ></textarea>
+
+                <button type="submit" class="btn-comentar">
+                    Comentar
+                </button>
+            </form>
+
+            <div id="mensagem" class="mensagem"></div>
+
+            <div id="comentarios" class="comentarios">
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>InfoPortal © 2026</p>
+    </footer>
+
+    <script src="/js/noticia.js"></script>
+</body>
+</html>
