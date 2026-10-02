@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>InfoPortal • Buscar</title>
-    <link rel="stylesheet" href="/css/busca.css">
+    <link rel="stylesheet" href="../css/busca.css">
 </head>
 
 <body>
@@ -14,6 +14,7 @@
             <a href="index.html" class="logo">
                 INFO<span>PORTAL</span>
             </a>
+
 
         <nav class="menu">
             <a href="index.html">Início</a>
@@ -72,11 +73,7 @@
 
                 <div class="campo">
                     <label for="data">Data</label>
-                    <input
-                        type="date"
-                        id="data"
-                        name="data"
-                    >
+                    <input type="date" id="data" name="data">
                 </div>
             </div>
 
@@ -93,16 +90,73 @@
                 <h2>Notícias encontradas</h2>
             </div>
 
-            <span id="contadorResultados">
-                0 resultados
-            </span>
+            <span id="contadorResultados">0 resultados</span>
         </div>
 
         <div id="resultados" class="resultados">
+            <article class="resultado-card">
+                <span class="categoria">Tecnologia</span>
+
+                <h3>
+                    Novas tecnologias transformam
+                    a rotina das cidades
+                </h3>
+
+                <p>
+                    Especialistas analisam como novas
+                    ferramentas digitais estão mudando
+                    a forma como as pessoas vivem,
+                    trabalham e se comunicam.
+                </p>
+
+                <div class="autor">
+                    <span>Equipe InfoPortal</span>
+                    <span class="data">2026-10-01</span>
+                </div>
+            </article>
+
+            <article class="resultado-card">
+                <span class="categoria">Política</span>
+
+                <h3>
+                    Novas propostas movimentam
+                    o cenário político nacional
+                </h3>
+
+                <p>
+                    Representantes discutem novas
+                    medidas e propostas durante
+                    reuniões realizadas nesta semana.
+                </p>
+
+                <div class="autor">
+                    <span>Equipe InfoPortal</span>
+                    <span class="data">2026-10-01</span>
+                </div>
+            </article>
+
+            <article class="resultado-card">
+                <span class="categoria">Economia</span>
+
+                <h3>
+                    Mercado apresenta novas
+                    perspectivas para o próximo período
+                </h3>
+
+                <p>
+                    Analistas apresentam suas expectativas
+                    para os próximos meses e avaliam
+                    os principais indicadores econômicos.
+                </p>
+
+                <div class="autor">
+                    <span>Equipe InfoPortal</span>
+                    <span class="data">2026-10-01</span>
+                </div>
+            </article>
         </div>
 
-        <div id="mensagem" class="mensagem">
-        </div>
+        <div id="mensagem" class="mensagem"></div>
     </section>
 </main>
 
@@ -110,7 +164,7 @@
     <p>InfoPortal © 2026</p>
 </footer>
 
-<script src="/js/busca.js"></script>
+<script src="../js/busca.js"></script>
 
 
 </body>
