@@ -1,3 +1,4 @@
+
 const btnCurtir = document.getElementById("btnCurtir");
 const contadorCurtidas = document.getElementById("contadorCurtidas");
 const comentarioForm = document.getElementById("comentarioForm");

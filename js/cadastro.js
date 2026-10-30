@@ -23,22 +23,21 @@ form.addEventListener("submit", async function (event) {
     }
 
     try {
-        const resposta = await fetch(
+        const resposta = await axios.post(
             "http://localhost:3000/api/cadastro",
+            dados,
             {
-                method: "POST",
                 headers: {
                     "Content-Type": "application/json"
-                },
-                body: JSON.stringify(dados)
+                }
             }
         );
 
-        const retorno = await resposta.json();
+        const retorno = resposta.data;
 
         resultado.textContent = retorno.mensagem;
 
-        if (resposta.ok && retorno.sucesso) {
+        if (resposta.status === 200 && retorno.sucesso) {
             resultado.className = "mensagem-sucesso";
             form.reset();
         } else {
@@ -49,6 +48,7 @@ form.addEventListener("submit", async function (event) {
         console.error("Erro no cadastro:", erro);
 
         resultado.textContent =
+            erro.response?.data?.mensagem ||
             "Não foi possível conectar ao servidor.";
 
         resultado.className = "mensagem-erro";

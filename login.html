@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,64 +8,64 @@
     <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-            <nav class="menu">
-            <a href="index.html">Início</a>
-            <a href="busca.html">Buscar</a>
-            <a href="login.html" class="active">Entrar</a>
-        </nav>
-    </div>
-</header>
+    <nav class="menu">
+        <a href="index.html">Início</a>
+        <a href="busca.html">Buscar</a>
+        <a href="login.html" class="active">Entrar</a>
+    </nav>
 
-<main class="main">
-    <section class="login-card">
-        <div class="cabecalho">
-            <h1>Entrar</h1>
-            <p>Acesse sua conta do InfoPortal.</p>
-        </div>
-
-        <form id="loginForm">
-            <div class="campo">
-                <label for="email">E-mail</label>
-
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="Digite seu e-mail"
-                    autocomplete="email"
-                    required
-                >
+    <main class="main">
+        <section class="login-card">
+            <div class="cabecalho">
+                <h1>Entrar</h1>
+                <p>Acesse sua conta do InfoPortal.</p>
             </div>
 
-            <div class="campo">
-                <label for="senha">Senha</label>
+            <form id="loginForm">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite seu e-mail"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
 
-                <input
-                    type="password"
-                    id="senha"
-                    placeholder="Digite sua senha"
-                    autocomplete="current-password"
-                    required
-                >
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        required
+                    >
+                </div>
+
+                <div id="mensagem" class="mensagem"></div>
+
+                <button type="submit" class="btn-login">
+                    Entrar
+                </button>
+            </form>
+
+            <div class="cadastro-link">
+                Ainda não possui uma conta?
+                <a href="cadastro.html">Criar conta</a>
             </div>
+        </section>
+    </main>
 
-            <div id="mensagem" class="mensagem"></div>
+    <footer class="footer">
+        <p>InfoPortal © 2026</p>
+    </footer>
 
-            <button type="submit" class="btn-login">
-                Entrar
-            </button>
-        </form>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
-        <div class="cadastro-link">
-            Ainda não possui uma conta?
-            <a href="cadastro.html">Criar conta</a>
-        </div>
-    </section>
-</main>
-
-<footer class="footer">
-    <p>InfoPortal © 2026</p>
-</footer>
-
-<script src="../js/login.js"></script>
+    <!-- JS externo -->
+    <script src="../js/login.js"></script>
 </body>
 </html>

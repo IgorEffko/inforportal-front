@@ -1,3 +1,4 @@
+
 const buscaForm = document.getElementById("buscaForm");
 const resultados = document.getElementById("resultados");
 const mensagem = document.getElementById("mensagem");
