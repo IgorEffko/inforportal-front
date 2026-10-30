@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal • Painel do Editor</title>
+    <link rel="stylesheet" href="css/editor.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">INFO<span>PORTAL</span></div>
+
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Buscar notícias</a>
+            <a href="editor.html" class="ativo">Painel do Editor</a>
+        </nav>
+
+        <div class="usuario">
+            <span id="nomeUsuario">Editor</span>
+            <button id="btnSair">Sair</button>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="titulo-pagina">
+            <h1>Painel do Editor</h1>
+            <p>Gerencie as notícias enviadas pelos jornalistas.</p>
+        </section>
+
+        <section class="resumo">
+            <div class="card-resumo">
+                <span>Notícias aguardando revisão</span>
+                <strong id="totalRevisao">0</strong>
+            </div>
+
+            <div class="card-resumo">
+                <span>Notícias aprovadas</span>
+                <strong id="totalAprovadas">0</strong>
+            </div>
+
+            <div class="card-resumo">
+                <span>Notícias rejeitadas</span>
+                <strong id="totalRejeitadas">0</strong>
+            </div>
+        </section>
+
+        <section class="secao-noticias">
+            <div class="cabecalho-secao">
+                <div>
+                    <h2>Notícias para revisão</h2>
+                    <p>Analise o conteúdo antes de aprovar ou rejeitar.</p>
+                </div>
+
+                <button id="btnAtualizar" class="btn-atualizar">
+                    Atualizar lista
+                </button>
+            </div>
+
+            <div id="mensagem" class="mensagem"></div>
+
+            <div id="listaNoticias" class="lista-noticias">
+                <p class="carregando">Carregando notícias...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        InfoPortal © 2026 • Painel do Editor
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/editor.js"></script>
+
+</body>
+</html>

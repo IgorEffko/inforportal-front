@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>InfoPortal • Painel Administrativo</title>
+
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header">
+
+        <div class="logo">
+            INFO<span>PORTAL</span>
+        </div>
+
+        <nav class="menu">
+            <a href="index.html">Início</a>
+            <a href="busca.html">Buscar notícias</a>
+            <a href="admin.html" class="ativo">Painel administrativo</a>
+        </nav>
+
+        <div class="usuario">
+            <span id="nomeUsuario">Administrador</span>
+            <button id="btnSair">Sair</button>
+        </div>
+
+    </header>
+
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="container">
+
+        <section class="titulo-pagina">
+
+            <div>
+                <h1>Painel Administrativo</h1>
+
+                <p>
+                    Gerencie os usuários e acompanhe as atividades do InfoPortal.
+                </p>
+            </div>
+
+        </section>
+
+
+        <!-- INDICADORES -->
+        <section class="resumo">
+
+            <article class="card-resumo">
+                <div class="icone">👥</div>
+
+                <div>
+                    <h3>Usuários cadastrados</h3>
+                    <strong id="totalUsuarios">0</strong>
+                </div>
+            </article>
+
+
+            <article class="card-resumo">
+                <div class="icone">📰</div>
+
+                <div>
+                    <h3>Total de notícias</h3>
+                    <strong id="totalNoticias">0</strong>
+                </div>
+            </article>
+
+
+            <article class="card-resumo">
+                <div class="icone">⏳</div>
+
+                <div>
+                    <h3>Em revisão</h3>
+                    <strong id="totalRevisao">0</strong>
+                </div>
+            </article>
+
+
+            <article class="card-resumo">
+                <div class="icone">✅</div>
+
+                <div>
+                    <h3>Publicadas</h3>
+                    <strong id="totalPublicadas">0</strong>
+                </div>
+            </article>
+
+        </section>
+
+
+        <!-- MENSAGEM DO SISTEMA -->
+        <div id="mensagem" class="mensagem"></div>
+
+
+        <!-- GERENCIAMENTO DE USUÁRIOS -->
+        <section class="admin-section">
+
+            <div class="cabecalho-secao">
+
+                <div>
+                    <h2>Gerenciamento de usuários</h2>
+
+                    <p>
+                        Consulte os usuários cadastrados e seus respectivos perfis.
+                    </p>
+                </div>
+
+                <button id="btnAtualizarUsuarios" class="btn-atualizar">
+                    Atualizar usuários
+                </button>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>E-mail</th>
+                            <th>Perfil</th>
+                            <th>Data de cadastro</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaUsuarios">
+
+                        <tr>
+                            <td colspan="5">
+                                Carregando usuários...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- GERENCIAMENTO DE NOTÍCIAS -->
+        <section class="admin-section">
+
+            <div class="cabecalho-secao">
+
+                <div>
+                    <h2>Gerenciamento de notícias</h2>
+
+                    <p>
+                        Acompanhe as notícias registradas no sistema e seus status.
+                    </p>
+                </div>
+
+                <button id="btnAtualizarNoticias" class="btn-atualizar">
+                    Atualizar notícias
+                </button>
+
+            </div>
+
+
+            <div class="tabela-container">
+
+                <table class="admin-table">
+
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Categoria</th>
+                            <th>Autor</th>
+                            <th>Status</th>
+                            <th>Data</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaNoticias">
+
+                        <tr>
+                            <td colspan="6">
+                                Carregando notícias...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer class="footer">
+
+        <p>
+            InfoPortal © 2026 • Painel Administrativo
+        </p>
+
+    </footer>
+
+
+    <!-- BIBLIOTECAS E JAVASCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
