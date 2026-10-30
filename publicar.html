@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoPortal • Painel do Jornalista</title>
+
+    <link rel="stylesheet" href="css/publicar.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                INFO<span>PORTAL</span>
+            </a>
+
+            <nav class="menu">
+                <a href="index.html">Início</a>
+                <a href="busca.html">Buscar</a>
+                <a href="publicar.html" class="active">Publicar notícia</a>
+            </nav>
+
+            <div class="usuario-area">
+                <span id="nomeUsuario">Jornalista</span>
+                <button id="btnSair" class="btn-sair">Sair</button>
+            </div>
+
+        </div>
+    </header>
+
+    <main class="main">
+
+        <section class="boas-vindas">
+            <span class="tag">ÁREA JORNALÍSTICA</span>
+
+            <h1>Painel do Jornalista</h1>
+
+            <p>
+                Escreva, organize e envie suas notícias para revisão editorial.
+            </p>
+
+            <div id="statusServidor" class="status-servidor">
+                Verificando conexão com o servidor...
+            </div>
+        </section>
+
+        <section class="conteudo">
+
+            <div class="painel-info">
+                <span class="icone">📝</span>
+
+                <h2>Nova notícia</h2>
+
+                <p>
+                    Preencha as informações abaixo para preparar sua publicação.
+                </p>
+            </div>
+
+            <form id="noticiaForm">
+
+                <div class="campo">
+                    <label for="titulo">Título da notícia *</label>
+
+                    <input
+                        type="text"
+                        id="titulo"
+                        maxlength="200"
+                        placeholder="Digite o título da notícia"
+                        required
+                    >
+                </div>
+
+                <div class="campos-duplos">
+
+                    <div class="campo">
+                        <label for="categoria">Categoria *</label>
+
+                        <select id="categoria" required>
+                            <option value="">Selecione uma categoria</option>
+                            <option value="politica">Política</option>
+                            <option value="economia">Economia</option>
+                            <option value="tecnologia">Tecnologia</option>
+                            <option value="esportes">Esportes</option>
+                            <option value="cultura">Cultura</option>
+                            <option value="saude">Saúde</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="tags">Tags</label>
+
+                        <input
+                            type="text"
+                            id="tags"
+                            placeholder="Ex.: educação, Brasil, ciência"
+                        >
+
+                        <small>Separe as tags por vírgula.</small>
+                    </div>
+
+                </div>
+
+                <div class="campo">
+                    <label for="imagem">Imagem de capa (URL)</label>
+
+                    <input
+                        type="url"
+                        id="imagem"
+                        placeholder="https://exemplo.com/imagem.jpg"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="resumo">Resumo *</label>
+
+                    <textarea
+                        id="resumo"
+                        rows="3"
+                        maxlength="300"
+                        placeholder="Escreva um resumo da notícia..."
+                        required
+                    ></textarea>
+
+                    <small>Máximo de 300 caracteres.</small>
+                </div>
+
+                <div class="campo">
+                    <label for="conteudo">Conteúdo da notícia *</label>
+
+                    <textarea
+                        id="conteudo"
+                        rows="12"
+                        placeholder="Desenvolva sua notícia..."
+                        required
+                    ></textarea>
+                </div>
+
+                <div id="mensagem" class="mensagem"></div>
+
+                <div class="botoes">
+
+                    <button
+                        type="button"
+                        id="btnRascunho"
+                        class="btn-secundario"
+                    >
+                        Salvar rascunho
+                    </button>
+
+                    <button type="submit" class="btn-principal">
+                        Enviar para revisão
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>InfoPortal © 2026 • Área do Jornalista</p>
+    </footer>
+
+    <!-- Biblioteca Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- JavaScript da página -->
+    <script src="js/publicar.js"></script>
+
+</body>
+</html>
